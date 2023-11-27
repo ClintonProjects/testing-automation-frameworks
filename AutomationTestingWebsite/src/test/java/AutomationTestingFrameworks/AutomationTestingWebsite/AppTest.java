@@ -1,20 +1,12 @@
 package AutomationTestingFrameworks.AutomationTestingWebsite;
 
-import static org.junit.Assert.assertTrue;
+import io.cucumber.java.en.Then;
 
-import org.junit.Test;
+public class AppTest {
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
-    }
+	@Then("Start Browser")
+	public void startBrowser() {
+		System.out.println("Start test");
+	}
+
 }
