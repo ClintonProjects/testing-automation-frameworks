@@ -21,19 +21,31 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 	// logging
 
 	private static final Logger logger = LogManager.getLogger(BrowserConfig.class);
+	private final int WAIT_TIME = 60;
 
 	/*
 	 * Handle by WebElement
 	 */
 
-	public void sendKeyByWebElement(WebElement element, String keys) throws InterruptedException {
+	public void sendKeysByWebElement(WebElement element, String keys) throws InterruptedException {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 60);
+			WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
 			wait.until(ExpectedConditions.visibilityOf(element));
 			element.sendKeys(keys);
 			logger.info("Successfully sent keys '{}' to element", keys);
 		} catch (Exception e) {
 			logger.error("Failed to send keys '{}' to element", keys, e);
+		}
+	}
+
+	public void clicksByWebElement(WebElement element) throws InterruptedException {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
+			wait.until(ExpectedConditions.visibilityOf(element));
+			element.click();
+			logger.info("Clicked on element by element: {}", element);
+		} catch (Exception e) {
+			logger.error("Failed to clicked on element by element: {}", e);
 		}
 	}
 
@@ -43,7 +55,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 
 	public void clickByXpath(String xpath) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
 			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 			element.click();
 			logger.info("Clicked on element with xpath: {}", xpath);
@@ -54,7 +66,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 
 	public void clickByXpathByAction(String xpath) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
 			Actions actions = new Actions(driver);
 			actions.click(driver.findElement(By.xpath(xpath))).build().perform();
 			logger.info("Clicked on element with xpath: {}", xpath);
@@ -63,9 +75,9 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 		}
 	}
 
-	public void sendKeyByXpath(String xpath, String keys) {
+	public void sendKeysByXpath(String xpath, String keys) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 60);
+			WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
 			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 			element.sendKeys(keys);
 			logger.info("sent keys to element with xpath: {}", xpath);
@@ -74,11 +86,11 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 		}
 	}
 
-	public void sendKeyByXpathByAction(String xpath, String keys) {
+	public void sendKeysByXpathByAction(String xpath, String keys) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 60);
+			WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
 			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
-			new Actions(driver).click(driver.findElement(By.xpath(xpath))).build().perform();
+			new Actions(driver).click(element).build().perform();
 			new Actions(driver).sendKeys(keys).build().perform();
 			logger.info("sent keys with action to element with xpath: {}", xpath);
 		} catch (Exception e) {
@@ -88,7 +100,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 
 	public String getTextByXpath(String xpath) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
 			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 			logger.info("Found text by xpath. TagName: {}, XPath: {}", element.getTagName(), xpath);
 			return element.getText();
@@ -100,7 +112,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 
 	public boolean isElementExistsByXpath(String xpath) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
 			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 			logger.info("Element exists by xpath: {}", xpath);
 			return element.isDisplayed();
@@ -126,7 +138,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 
 	public void scrollDown(String xpath) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("window.scrollBy(0,350)");

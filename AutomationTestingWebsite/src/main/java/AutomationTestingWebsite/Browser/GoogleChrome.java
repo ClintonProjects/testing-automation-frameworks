@@ -41,6 +41,7 @@ public interface GoogleChrome {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
+		options.setExperimentalOption("useAutomationExtension", false);
 		options.addArguments("--disable-blink-features=AutomationControlled");
 		options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 		options.setExperimentalOption("useAutomationExtension", null);
