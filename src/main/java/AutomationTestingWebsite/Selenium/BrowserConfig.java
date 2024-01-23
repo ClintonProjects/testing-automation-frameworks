@@ -1,10 +1,15 @@
 package AutomationTestingWebsite.Selenium;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,6 +18,8 @@ import AutomationTestingWebsite.Browser.Browser;
 import AutomationTestingWebsite.Browser.Firefox;
 import AutomationTestingWebsite.Browser.GoogleChrome;
 import AutomationTestingWebsite.Browser.Edge;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -34,7 +41,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			element.sendKeys(keys);
 			logger.info("Successfully sent keys '{}' to element", keys);
 		} catch (Exception e) {
-			logger.error("Failed to send keys '{}' to element", keys, e);
+			logger.error("Failed to send keys '{}' to element", keys, e, "Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -45,7 +52,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			element.click();
 			logger.info("Clicked on element by element: {}", element);
 		} catch (Exception e) {
-			logger.error("Failed to clicked on element by element: {}", e);
+			logger.error("Failed to clicked on element by element: {}", e, "Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -60,7 +67,8 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			element.click();
 			logger.info("Clicked on element with xpath: {}", xpath);
 		} catch (Exception e) {
-			logger.error("Failed to click on element with xpath: {}", xpath, e);
+			logger.error("Failed to click on element with xpath: {}", xpath, e,
+					"Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -71,7 +79,8 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			actions.click(driver.findElement(By.xpath(xpath))).build().perform();
 			logger.info("Clicked on element with xpath: {}", xpath);
 		} catch (Exception e) {
-			logger.error("Failed to click on element with action by xpath: {}", xpath, e);
+			logger.error("Failed to click on element with action by xpath: {}", xpath, e,
+					"Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -82,7 +91,8 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			element.sendKeys(keys);
 			logger.info("sent keys to element with xpath: {}", xpath);
 		} catch (Exception e) {
-			logger.error("Failed to send keys to element by xpath: {}", xpath, e);
+			logger.error("Failed to send keys to element by xpath: {}", xpath, e,
+					"Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -94,7 +104,8 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			new Actions(driver).sendKeys(keys).build().perform();
 			logger.info("sent keys with action to element with xpath: {}", xpath);
 		} catch (Exception e) {
-			logger.error("Failed to send keys with action to element by xpath: {}", xpath, e);
+			logger.error("Failed to send keys with action to element by xpath: {}", xpath, e,
+					"Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -105,7 +116,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			logger.info("Found text by xpath. TagName: {}, XPath: {}", element.getTagName(), xpath);
 			return element.getText();
 		} catch (Exception e) {
-			logger.error("Failed to get text by xpath: {}", xpath, e);
+			logger.error("Failed to get text by xpath: {}", xpath, e, "Screen shot log " + screenshot("error"));
 			return null;
 		}
 	}
@@ -117,7 +128,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			logger.info("Element exists by xpath: {}", xpath);
 			return element.isDisplayed();
 		} catch (Exception e) {
-			logger.error("Element does not exist by xpath: {}", xpath, e);
+			logger.error("Element does not exist by xpath: {}", xpath, e, "Screen shot log " + screenshot("error"));
 			return false;
 		}
 	}
@@ -132,7 +143,8 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			js.executeScript(script, webElement);
 			logger.info("Executed JavaScript: '{}' on element", script);
 		} catch (Exception e) {
-			logger.error("Failed to execute JavaScript: '{}' on element", script, e);
+			logger.error("Failed to execute JavaScript: '{}' on element", script, e,
+					"Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -144,7 +156,8 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			js.executeScript("window.scrollBy(0,350)");
 			logger.info("Scrolled down using JavaScript for element with xpath: {}", xpath);
 		} catch (Exception e) {
-			logger.error("Failed to scroll down using JavaScript for element with xpath: {}", xpath, e);
+			logger.error("Failed to scroll down using JavaScript for element with xpath: {}", xpath, e,
+					"Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -158,7 +171,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			logger.info("Retrieved cookies: {}", cookies);
 			return cookies;
 		} catch (Exception e) {
-			logger.error("Failed to retrieve cookies", e);
+			logger.error("Failed to retrieve cookies", e, "Screen shot log " + screenshot("error"));
 			return Collections.emptySet();
 		}
 	}
@@ -172,7 +185,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 
 			return listOfCookies;
 		} catch (Exception e) {
-			logger.error("Failed to convert cookies to String array", e);
+			logger.error("Failed to convert cookies to String array", e, "Screen shot log " + screenshot("error"));
 			return new ArrayList<>();
 		}
 	}
@@ -186,7 +199,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			driver.get(link);
 			logger.info("Opened link: {}", link);
 		} catch (Exception e) {
-			logger.error("Failed to open link: {}", link, e);
+			logger.error("Failed to open link: {}", link, e, "Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -195,7 +208,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			driver.navigate().to(link);
 			logger.info("Navigated to link: {}", link);
 		} catch (Exception e) {
-			logger.error("Failed to navigate to link: {}", link, e);
+			logger.error("Failed to navigate to link: {}", link, e, "Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -204,7 +217,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			driver.quit();
 			logger.info("Quit from the browser");
 		} catch (Exception e) {
-			logger.error("Failed to shutdown browser", e);
+			logger.error("Failed to shutdown browser", e, "Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -213,7 +226,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			driver.close();
 			logger.info("Closed the current tab");
 		} catch (Exception e) {
-			logger.error("Failed to close the current tab", e);
+			logger.error("Failed to close the current tab", e, "Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -223,7 +236,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			driver.close();
 			logger.info("Closed tab number: {}", tabNum);
 		} catch (Exception e) {
-			logger.error("Failed to close tab number: {}", tabNum, e);
+			logger.error("Failed to close tab number: {}", tabNum, e, "Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -234,7 +247,8 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 					.perform();
 			logger.info("Opened item in a new tab with xpath: {}", xpath);
 		} catch (Exception e) {
-			logger.error("Failed to open item in a new tab with xpath: {}", xpath, e);
+			logger.error("Failed to open item in a new tab with xpath: {}", xpath, e,
+					"Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -246,7 +260,7 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			driver.switchTo().window(tabs2.get(tabNum));
 			logger.info("Changed to tab number: {}", tabNum);
 		} catch (Exception e) {
-			logger.error("Failed to change to tab number: {}", tabNum, e);
+			logger.error("Failed to change to tab number: {}", tabNum, e, "Screen shot log " + screenshot("error"));
 		}
 	}
 
@@ -256,7 +270,28 @@ public class BrowserConfig extends Browser implements GoogleChrome, Firefox, Edg
 			logger.info("Retrieved page text as a string");
 			return pageText;
 		} catch (Exception e) {
-			logger.error("Failed to retrieve page text as a string", e);
+			logger.error("Failed to retrieve page text as a string ", e, "Screen shot log " + screenshot("error"));
+			return null;
+		}
+	}
+
+	public String screenshot(String fileName) {
+		try {
+			logger.info("Taking screenshot...");
+			File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			logger.info("Screenshot captured successfully.");
+			String projectDirectory = System.getProperty("user.dir");
+			String relativeFilePath = projectDirectory + File.separator + "screenshot logs" + File.separator + fileName
+					+ "-" + "screenshot_" + new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date()) + ".jpeg";
+			File logsFolder = new File(projectDirectory + File.separator + "screenshot logs");
+			if (!logsFolder.exists())
+				logsFolder.mkdirs();
+			FileUtils.copyFile(screenshot, new File(relativeFilePath));
+			logger.info("Screenshot file copied successfully as JPEG.");
+			return relativeFilePath;
+		} catch (IOException e) {
+			logger.error("Failed to take a screenshot.", e);
+			e.printStackTrace();
 			return null;
 		}
 	}

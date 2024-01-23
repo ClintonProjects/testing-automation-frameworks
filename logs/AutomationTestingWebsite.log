@@ -1,0 +1,429 @@
+[ERROR] 2023-11-28 09:55:16 [main] GoogleChrome - Failed to start ChromeDriver
+org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 119.0.6045.160 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
+System info: host: 'CLINTON', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x0081A813+48355]
+	(No symbol) [0x007AC4B1]
+	(No symbol) [0x006B5358]
+	(No symbol) [0x006D61AC]
+	(No symbol) [0x006D1EF3]
+	(No symbol) [0x006D0579]
+	(No symbol) [0x00700C55]
+	(No symbol) [0x0070093C]
+	(No symbol) [0x006FA536]
+	(No symbol) [0x006D82DC]
+	(No symbol) [0x006D93DD]
+	GetHandleVerifier [0x00A7AABD+2539405]
+	GetHandleVerifier [0x00ABA78F+2800735]
+	GetHandleVerifier [0x00AB456C+2775612]
+	GetHandleVerifier [0x008A51E0+616112]
+	(No symbol) [0x007B5F8C]
+	(No symbol) [0x007B2328]
+	(No symbol) [0x007B240B]
+	(No symbol) [0x007A4FF7]
+	BaseThreadInitThunk [0x7718FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DD7C6E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DD7C3E+238]
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[?:?]
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:127) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[?:?]
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647) ~[?:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:129) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:139) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:210) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:130) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:73) ~[selenium-chromium-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:163) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:150) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:105) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at AutomationTestingWebsite.Browser.GoogleChrome.startChromeDriver(GoogleChrome.java:20) [classes/:?]
+	at AutomationTestingWebsite.Main.Main.main(Main.java:15) [classes/:?]
+[INFO ] 2023-11-28 09:58:43 [main] Firefox - Started FirefoxDriver
+[INFO ] 2023-11-28 09:58:44 [main] BrowserConfig - Navigated to link: https://rollbit.com/duel-arena
+[ERROR] 2023-11-28 09:59:42 [main] BrowserConfig - Failed to scroll down using JavaScript for element with xpath: //*[@id="root"]/div[6]/div[1]/div/div[1]/div[1]/div/div[1]/div[1]/div[3]/div
+org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
+System info: host: 'CLINTON', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 120.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20231116134553, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 7076, moz:profile: C:\Users\Clinton\AppData\Lo..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 22414608-b92e-47f8-993f-c761fdb39ced
+*** Element info: {Using=xpath, value=//*[@id="root"]/div[6]/div[1]/div/div[1]/div[1]/div/div[1]/div[1]/div[3]/div}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[?:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:445) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353) ~[selenium-api-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205) ~[selenium-support-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201) ~[selenium-support-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:211) ~[selenium-support-4.0.0-alpha-2.jar:?]
+	at AutomationTestingWebsite.Selenium.BrowserConfig.scrollDown(BrowserConfig.java:142) [classes/:?]
+	at AutomationTestingWebsite.Main.Main.main(Main.java:17) [classes/:?]
+[INFO ] 2023-11-28 09:59:57 [main] Firefox - Started FirefoxDriver
+[INFO ] 2023-11-28 09:59:59 [main] BrowserConfig - Navigated to link: https://rollbit.com/duel-arena
+[ERROR] 2023-11-28 10:00:59 [main] BrowserConfig - Failed to scroll down using JavaScript for element with xpath: //*[@id="root"]/div[6]/div[1]/div/div[1]/div[1]/div/div[1]/div[1]/div[3]/div
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="root"]/div[6]/div[1]/div/div[1]/div[1]/div/div[1]/div[1]/div[3]/div (tried for 60 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138) ~[selenium-support-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234) ~[selenium-support-4.0.0-alpha-2.jar:?]
+	at AutomationTestingWebsite.Selenium.BrowserConfig.scrollDown(BrowserConfig.java:142) [classes/:?]
+	at AutomationTestingWebsite.Main.Main.main(Main.java:17) [classes/:?]
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //*[@id="root"]/div[6]/div[1]/div/div[1]/div[1]/div/div[1]/div[1]/div[3]/div
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
+System info: host: 'CLINTON', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 120.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20231116134553, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 10992, moz:profile: C:\Users\Clinton\AppData\Lo..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 2d2e1dfc-ff13-45cb-a6ae-59ace77c505c
+*** Element info: {Using=xpath, value=//*[@id="root"]/div[6]/div[1]/div/div[1]/div[1]/div/div[1]/div[1]/div[3]/div}
+	at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[?:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:445) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353) ~[selenium-api-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205) ~[selenium-support-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201) ~[selenium-support-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:211) ~[selenium-support-4.0.0-alpha-2.jar:?]
+	... 2 more
+[ERROR] 2023-12-16 04:07:21 [main] PropertyFileReader - Property not found
+java.lang.Exception: Property not found
+	at AutomationTestingWebsite.PropertyFileReader.PropertyFileReader.getProperty(PropertyFileReader.java:41) [classes/:?]
+	at AutomationTestingWebsite.Main.Main.main(Main.java:16) [classes/:?]
+[ERROR] 2023-12-16 04:08:20 [main] PropertyFileReader - Property not found
+java.lang.Exception: Property not found
+	at AutomationTestingWebsite.PropertyFileReader.PropertyFileReader.getProperty(PropertyFileReader.java:41) [classes/:?]
+	at AutomationTestingWebsite.Main.Main.main(Main.java:16) [classes/:?]
+[ERROR] 2023-12-16 04:10:08 [main] PropertyFileReader - Property not found
+java.lang.Exception: Property not found
+	at AutomationTestingWebsite.PropertyFileReader.PropertyFileReader.getProperty(PropertyFileReader.java:41) [classes/:?]
+	at AutomationTestingWebsite.Main.Main.main(Main.java:16) [classes/:?]
+[ERROR] 2023-12-16 04:11:51 [main] PropertyFileReader - Property not found
+java.lang.Exception: Property not found
+	at AutomationTestingWebsite.PropertyFileReader.PropertyFileReader.getProperty(PropertyFileReader.java:41) [classes/:?]
+	at AutomationTestingWebsite.Main.Main.main(Main.java:16) [classes/:?]
+[ERROR] 2023-12-16 04:12:15 [main] PropertyFileReader - Property not found
+java.lang.Exception: Property not found
+	at AutomationTestingWebsite.PropertyFileReader.PropertyFileReader.getProperty(PropertyFileReader.java:41) [classes/:?]
+	at AutomationTestingWebsite.Main.Main.main(Main.java:16) [classes/:?]
+[ERROR] 2024-01-22 21:43:59 [main] GoogleChrome - Failed to start ChromeDriver
+org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 120.0.6099.225 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
+System info: host: 'CLINTON', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x0022A813+48355]
+	(No symbol) [0x001BC4B1]
+	(No symbol) [0x000C5358]
+	(No symbol) [0x000E61AC]
+	(No symbol) [0x000E1EF3]
+	(No symbol) [0x000E0579]
+	(No symbol) [0x00110C55]
+	(No symbol) [0x0011093C]
+	(No symbol) [0x0010A536]
+	(No symbol) [0x000E82DC]
+	(No symbol) [0x000E93DD]
+	GetHandleVerifier [0x0048AABD+2539405]
+	GetHandleVerifier [0x004CA78F+2800735]
+	GetHandleVerifier [0x004C456C+2775612]
+	GetHandleVerifier [0x002B51E0+616112]
+	(No symbol) [0x001C5F8C]
+	(No symbol) [0x001C2328]
+	(No symbol) [0x001C240B]
+	(No symbol) [0x001B4FF7]
+	BaseThreadInitThunk [0x764FFCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x76F97C6E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F97C3E+238]
+	(No symbol) [0x00000000]
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[?:?]
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:127) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[?:?]
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647) ~[?:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:129) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:139) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:210) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:130) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:73) ~[selenium-chromium-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:163) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:150) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:105) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at AutomationTestingWebsite.Browser.GoogleChrome.startChromeDriver(GoogleChrome.java:20) [classes/:?]
+	at AutomationTestingWebsite.Main.Main.main(Main.java:16) [classes/:?]
+[ERROR] 2024-01-22 21:44:03 [main] GoogleChrome - Failed to start ChromeDriver
+org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 120.0.6099.225 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
+System info: host: 'CLINTON', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x0022A813+48355]
+	(No symbol) [0x001BC4B1]
+	(No symbol) [0x000C5358]
+	(No symbol) [0x000E61AC]
+	(No symbol) [0x000E1EF3]
+	(No symbol) [0x000E0579]
+	(No symbol) [0x00110C55]
+	(No symbol) [0x0011093C]
+	(No symbol) [0x0010A536]
+	(No symbol) [0x000E82DC]
+	(No symbol) [0x000E93DD]
+	GetHandleVerifier [0x0048AABD+2539405]
+	GetHandleVerifier [0x004CA78F+2800735]
+	GetHandleVerifier [0x004C456C+2775612]
+	GetHandleVerifier [0x002B51E0+616112]
+	(No symbol) [0x001C5F8C]
+	(No symbol) [0x001C2328]
+	(No symbol) [0x001C240B]
+	(No symbol) [0x001B4FF7]
+	BaseThreadInitThunk [0x764FFCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x76F97C6E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F97C3E+238]
+	(No symbol) [0x00000000]
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[?:?]
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:127) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[?:?]
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647) ~[?:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:129) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:139) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:210) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:130) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:73) ~[selenium-chromium-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:163) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:150) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:105) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at AutomationTestingWebsite.Browser.GoogleChrome.startChromeDriver(GoogleChrome.java:20) [classes/:?]
+	at AutomationTestingWebsite.Main.Main.main(Main.java:16) [classes/:?]
+[ERROR] 2024-01-22 21:58:26 [main] GoogleChrome - Failed to start ChromeDriver
+org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 120.0.6099.225 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
+System info: host: 'CLINTON', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x0022A813+48355]
+	(No symbol) [0x001BC4B1]
+	(No symbol) [0x000C5358]
+	(No symbol) [0x000E61AC]
+	(No symbol) [0x000E1EF3]
+	(No symbol) [0x000E0579]
+	(No symbol) [0x00110C55]
+	(No symbol) [0x0011093C]
+	(No symbol) [0x0010A536]
+	(No symbol) [0x000E82DC]
+	(No symbol) [0x000E93DD]
+	GetHandleVerifier [0x0048AABD+2539405]
+	GetHandleVerifier [0x004CA78F+2800735]
+	GetHandleVerifier [0x004C456C+2775612]
+	GetHandleVerifier [0x002B51E0+616112]
+	(No symbol) [0x001C5F8C]
+	(No symbol) [0x001C2328]
+	(No symbol) [0x001C240B]
+	(No symbol) [0x001B4FF7]
+	BaseThreadInitThunk [0x764FFCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x76F97C6E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F97C3E+238]
+	(No symbol) [0x00000000]
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[?:?]
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$1(ProtocolHandshake.java:127) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[?:?]
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647) ~[?:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:129) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:139) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:210) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:130) ~[selenium-remote-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:73) ~[selenium-chromium-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:163) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:150) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:105) ~[selenium-chrome-driver-4.0.0-alpha-2.jar:?]
+	at AutomationTestingWebsite.Browser.GoogleChrome.startChromeDriver(GoogleChrome.java:20) ~[classes/:?]
+	at AutomationTestingFrameworks.AutomationTestingWebsite.AppTest.chooseBrowser(AppTest.java:20) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66) ~[cucumber-java-7.14.0.jar:7.14.0]
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24) ~[cucumber-java-7.14.0.jar:7.14.0]
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47) ~[cucumber-java-7.14.0.jar:7.14.0]
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29) ~[cucumber-java-7.14.0.jar:7.14.0]
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151) ~[cucumber-junit-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148) ~[cucumber-junit-7.14.1.jar:7.14.1]
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144) ~[cucumber-junit-7.14.1.jar:7.14.1]
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28) ~[cucumber-junit-7.14.1.jar:7.14.1]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238) ~[junit-4.11.jar:?]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63) ~[junit-4.11.jar:?]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236) ~[junit-4.11.jar:?]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53) ~[junit-4.11.jar:?]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229) ~[junit-4.11.jar:?]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309) ~[junit-4.11.jar:?]
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137) ~[cucumber-junit-7.14.1.jar:7.14.1]
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196) ~[cucumber-junit-7.14.1.jar:7.14.1]
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89) ~[cucumber-junit-7.14.1.jar:7.14.1]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238) ~[junit-4.11.jar:?]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63) ~[junit-4.11.jar:?]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236) ~[junit-4.11.jar:?]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53) ~[junit-4.11.jar:?]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229) ~[junit-4.11.jar:?]
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runFeatures$6(CucumberExecutionContext.java:148) ~[cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runtime.CucumberExecutionContext.execute(CucumberExecutionContext.java:163) [cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.core.runtime.CucumberExecutionContext.runFeatures(CucumberExecutionContext.java:146) [cucumber-core-7.14.1.jar:7.14.1]
+	at io.cucumber.junit.Cucumber$StartAndFinishTestRun.evaluate(Cucumber.java:226) [cucumber-junit-7.14.1.jar:7.14.1]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309) [junit-4.11.jar:?]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:93) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:529) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:756) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452) [.cp/:?]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210) [.cp/:?]
+[INFO ] 2024-01-22 22:00:08 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:01:29 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:01:30 [main] BrowserConfig - Closed the current tab
+[INFO ] 2024-01-22 22:02:12 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:02:13 [main] BrowserConfig - Closed the current tab
+[INFO ] 2024-01-22 22:05:21 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:05:21 [main] BrowserConfig - Taking screenshot...
+[INFO ] 2024-01-22 22:05:21 [main] BrowserConfig - Screenshot captured successfully.
+[INFO ] 2024-01-22 22:05:21 [main] BrowserConfig - Screenshot file copied successfully.
+[INFO ] 2024-01-22 22:05:23 [main] BrowserConfig - Closed the current tab
+[INFO ] 2024-01-22 22:08:25 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:08:25 [main] BrowserConfig - Taking screenshot...
+[INFO ] 2024-01-22 22:08:25 [main] BrowserConfig - Screenshot captured successfully.
+[INFO ] 2024-01-22 22:08:25 [main] BrowserConfig - Screenshot file copied successfully.
+[INFO ] 2024-01-22 22:08:26 [main] BrowserConfig - Closed the current tab
+[INFO ] 2024-01-22 22:09:32 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:09:32 [main] BrowserConfig - Taking screenshot...
+[INFO ] 2024-01-22 22:09:33 [main] BrowserConfig - Screenshot captured successfully.
+[INFO ] 2024-01-22 22:09:33 [main] BrowserConfig - Screenshot file copied successfully.
+[INFO ] 2024-01-22 22:09:34 [main] BrowserConfig - Closed the current tab
+[INFO ] 2024-01-22 22:12:07 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:12:07 [main] BrowserConfig - Taking screenshot...
+[INFO ] 2024-01-22 22:12:07 [main] BrowserConfig - Screenshot captured successfully.
+[INFO ] 2024-01-22 22:12:07 [main] BrowserConfig - Screenshot file copied successfully.
+[INFO ] 2024-01-22 22:12:08 [main] BrowserConfig - Closed the current tab
+[INFO ] 2024-01-22 22:13:36 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:13:36 [main] BrowserConfig - Taking screenshot...
+[INFO ] 2024-01-22 22:13:36 [main] BrowserConfig - Screenshot captured successfully.
+[INFO ] 2024-01-22 22:13:36 [main] BrowserConfig - Screenshot file copied successfully as JPEG.
+[INFO ] 2024-01-22 22:13:37 [main] BrowserConfig - Closed the current tab
+[INFO ] 2024-01-22 22:14:26 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:14:28 [main] BrowserConfig - Navigated to link: https://www.google.com/
+[INFO ] 2024-01-22 22:14:28 [main] BrowserConfig - Taking screenshot...
+[INFO ] 2024-01-22 22:14:28 [main] BrowserConfig - Screenshot captured successfully.
+[INFO ] 2024-01-22 22:14:28 [main] BrowserConfig - Screenshot file copied successfully as JPEG.
+[INFO ] 2024-01-22 22:14:30 [main] BrowserConfig - Closed the current tab
+[INFO ] 2024-01-22 22:16:40 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:16:41 [main] BrowserConfig - Navigated to link: https://www.google.com/
+[INFO ] 2024-01-22 22:16:41 [main] BrowserConfig - Taking screenshot...
+[INFO ] 2024-01-22 22:16:41 [main] BrowserConfig - Screenshot captured successfully.
+[INFO ] 2024-01-22 22:16:41 [main] BrowserConfig - Screenshot file copied successfully as JPEG.
+[INFO ] 2024-01-22 22:16:42 [main] BrowserConfig - Closed the current tab
+[INFO ] 2024-01-22 22:18:11 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:18:13 [main] BrowserConfig - Navigated to link: https://www.google.com/
+[INFO ] 2024-01-22 22:18:13 [main] BrowserConfig - Taking screenshot...
+[INFO ] 2024-01-22 22:18:13 [main] BrowserConfig - Screenshot captured successfully.
+[INFO ] 2024-01-22 22:18:13 [main] BrowserConfig - Screenshot file copied successfully as JPEG.
+[INFO ] 2024-01-22 22:18:14 [main] BrowserConfig - Closed the current tab
+[INFO ] 2024-01-22 22:29:18 [main] Firefox - Started FirefoxDriver
+[INFO ] 2024-01-22 22:29:20 [main] BrowserConfig - Navigated to link: https://www.google.com/
+[INFO ] 2024-01-22 22:29:20 [main] BrowserConfig - Taking screenshot...
+[INFO ] 2024-01-22 22:29:20 [main] BrowserConfig - Screenshot captured successfully.
+[INFO ] 2024-01-22 22:29:20 [main] BrowserConfig - Screenshot file copied successfully as JPEG.
+[INFO ] 2024-01-22 22:29:21 [main] BrowserConfig - Closed the current tab
